@@ -12,7 +12,9 @@ namespace Inventory.Server.Extensions
     {
         internal static IMvcBuilder AddValidators(this IMvcBuilder builder)
         {
-            builder.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AppConfiguration>());
+            builder.Services
+                .AddFluentValidationAutoValidation()
+                .AddFluentValidationClientsideAdapters();
             return builder;
         }
 

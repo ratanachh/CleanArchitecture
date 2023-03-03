@@ -3,7 +3,7 @@ using Inventory.Domain.Entities.Misc;
 
 namespace Inventory.Application.Specifications.Misc
 {
-    public class DocumentFilterSpecification : HeroSpecification<Document>
+    public class DocumentFilterSpecification : Specification<Document>
     {
         public DocumentFilterSpecification(string searchString, string userId)
         {

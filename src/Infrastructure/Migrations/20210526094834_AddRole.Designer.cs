@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Inventory.Infrastructure.Migrations
 {
-    [DbContext(typeof(BlazorHeroContext))]
-    [Migration("20210526094834_AddBlazorHeroRole")]
-    partial class AddBlazorHeroRole
+    [DbContext(typeof(InventoryContext))]
+    [Migration("20210526094834_AddRole")]
+    partial class AddRole
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -127,7 +127,7 @@ namespace Inventory.Infrastructure.Migrations
                     b.ToTable("Roles", "Identity");
                 });
 
-            modelBuilder.Entity("Inventory.Application.Models.Identity.BlazorHeroUser", b =>
+            modelBuilder.Entity("Inventory.Application.Models.Identity.InventoryUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -447,11 +447,11 @@ namespace Inventory.Infrastructure.Migrations
 
             modelBuilder.Entity("Inventory.Application.Models.Chat.ChatHistory", b =>
                 {
-                    b.HasOne("Inventory.Application.Models.Identity.BlazorHeroUser", "FromUser")
+                    b.HasOne("Inventory.Application.Models.Identity.InventoryUser", "FromUser")
                         .WithMany("ChatHistoryFromUsers")
                         .HasForeignKey("FromUserId");
 
-                    b.HasOne("Inventory.Application.Models.Identity.BlazorHeroUser", "ToUser")
+                    b.HasOne("Inventory.Application.Models.Identity.InventoryUser", "ToUser")
                         .WithMany("ChatHistoryToUsers")
                         .HasForeignKey("ToUserId");
 
@@ -482,7 +482,7 @@ namespace Inventory.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Inventory.Application.Models.Identity.BlazorHeroUser", null)
+                    b.HasOne("Inventory.Application.Models.Identity.InventoryUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -491,7 +491,7 @@ namespace Inventory.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Inventory.Application.Models.Identity.BlazorHeroUser", null)
+                    b.HasOne("Inventory.Application.Models.Identity.InventoryUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -506,7 +506,7 @@ namespace Inventory.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Inventory.Application.Models.Identity.BlazorHeroUser", null)
+                    b.HasOne("Inventory.Application.Models.Identity.InventoryUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -515,14 +515,14 @@ namespace Inventory.Infrastructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Inventory.Application.Models.Identity.BlazorHeroUser", null)
+                    b.HasOne("Inventory.Application.Models.Identity.InventoryUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Inventory.Application.Models.Identity.BlazorHeroUser", b =>
+            modelBuilder.Entity("Inventory.Application.Models.Identity.InventoryUser", b =>
                 {
                     b.Navigation("ChatHistoryFromUsers");
 

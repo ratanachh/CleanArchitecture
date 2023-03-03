@@ -5,7 +5,7 @@ using Inventory.Domain.Contracts;
 
 namespace Inventory.Application.Specifications.Base
 {
-    public abstract class HeroSpecification<T> : ISpecification<T> where T : class, IEntity
+    public abstract class Specification<T> : ISpecification<T> where T : class, IEntity
     {
         public Expression<Func<T, bool>> Criteria { get; set; }
         public List<Expression<Func<T, object>>> Includes { get; } = new();

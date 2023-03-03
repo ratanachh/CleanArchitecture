@@ -19,14 +19,14 @@ namespace Inventory.Infrastructure
     {
         private readonly ILogger<DatabaseSeeder> _logger;
         private readonly IStringLocalizer<DatabaseSeeder> _localizer;
-        private readonly BlazorHeroContext _db;
-        private readonly UserManager<BlazorHeroUser> _userManager;
-        private readonly RoleManager<BlazorHeroRole> _roleManager;
+        private readonly InventoryContext _db;
+        private readonly UserManager<InventoryUser> _userManager;
+        private readonly RoleManager<InventoryRole> _roleManager;
 
         public DatabaseSeeder(
-            UserManager<BlazorHeroUser> userManager,
-            RoleManager<BlazorHeroRole> roleManager,
-            BlazorHeroContext db,
+            UserManager<InventoryUser> userManager,
+            RoleManager<InventoryRole> roleManager,
+            InventoryContext db,
             ILogger<DatabaseSeeder> logger,
             IStringLocalizer<DatabaseSeeder> localizer)
         {
@@ -49,7 +49,7 @@ namespace Inventory.Infrastructure
             Task.Run(async () =>
             {
                 //Check if Role Exists
-                var adminRole = new BlazorHeroRole(RoleConstants.AdministratorRole, _localizer["Administrator role with full permissions"]);
+                var adminRole = new InventoryRole(RoleConstants.AdministratorRole, _localizer["Administrator role with full permissions"]);
                 var adminRoleInDb = await _roleManager.FindByNameAsync(RoleConstants.AdministratorRole);
                 if (adminRoleInDb == null)
                 {
@@ -58,7 +58,7 @@ namespace Inventory.Infrastructure
                     _logger.LogInformation(_localizer["Seeded Administrator Role."]);
                 }
                 //Check if User Exists
-                var superUser = new BlazorHeroUser
+                var superUser = new InventoryUser
                 {
                     FirstName = "Mukesh",
                     LastName = "Murugan",
@@ -98,7 +98,7 @@ namespace Inventory.Infrastructure
             Task.Run(async () =>
             {
                 //Check if Role Exists
-                var basicRole = new BlazorHeroRole(RoleConstants.BasicRole, _localizer["Basic role with default permissions"]);
+                var basicRole = new InventoryRole(RoleConstants.BasicRole, _localizer["Basic role with default permissions"]);
                 var basicRoleInDb = await _roleManager.FindByNameAsync(RoleConstants.BasicRole);
                 if (basicRoleInDb == null)
                 {
@@ -106,7 +106,7 @@ namespace Inventory.Infrastructure
                     _logger.LogInformation(_localizer["Seeded Basic Role."]);
                 }
                 //Check if User Exists
-                var basicUser = new BlazorHeroUser
+                var basicUser = new InventoryUser
                 {
                     FirstName = "John",
                     LastName = "Doe",

@@ -3,7 +3,7 @@ using Inventory.Domain.Entities.Catalog;
 
 namespace Inventory.Application.Specifications.Catalog
 {
-    public class ProductFilterSpecification : HeroSpecification<Product>
+    public class ProductFilterSpecification : Specification<Product>
     {
         public ProductFilterSpecification(string searchString)
         {

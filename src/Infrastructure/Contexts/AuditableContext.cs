@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Infrastructure.Contexts
 {
-    public abstract class AuditableContext : IdentityDbContext<BlazorHeroUser, BlazorHeroRole, string, IdentityUserClaim<string>, IdentityUserRole<string>, IdentityUserLogin<string>, BlazorHeroRoleClaim, IdentityUserToken<string>>
+    public abstract class AuditableContext : IdentityDbContext<InventoryUser, InventoryRole, string, IdentityUserClaim<string>, IdentityUserRole<string>, IdentityUserLogin<string>, InventoryRoleClaim, IdentityUserToken<string>>
     {
         protected AuditableContext(DbContextOptions options) : base(options)
         {

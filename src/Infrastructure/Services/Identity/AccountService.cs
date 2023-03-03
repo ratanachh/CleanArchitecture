@@ -13,14 +13,14 @@ namespace Inventory.Infrastructure.Services.Identity
 {
     public class AccountService : IAccountService
     {
-        private readonly UserManager<BlazorHeroUser> _userManager;
-        private readonly SignInManager<BlazorHeroUser> _signInManager;
+        private readonly UserManager<InventoryUser> _userManager;
+        private readonly SignInManager<InventoryUser> _signInManager;
         private readonly IUploadService _uploadService;
         private readonly IStringLocalizer<AccountService> _localizer;
 
         public AccountService(
-            UserManager<BlazorHeroUser> userManager,
-            SignInManager<BlazorHeroUser> signInManager,
+            UserManager<InventoryUser> userManager,
+            SignInManager<InventoryUser> signInManager,
             IUploadService uploadService,
             IStringLocalizer<AccountService> localizer)
         {

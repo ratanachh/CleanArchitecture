@@ -9,7 +9,7 @@ namespace Inventory.Infrastructure.Mappings
     {
         public ChatHistoryProfile()
         {
-            CreateMap<ChatHistory<IChatUser>, ChatHistory<BlazorHeroUser>>().ReverseMap();
+            CreateMap<ChatHistory<IChatUser>, ChatHistory<InventoryUser>>().ReverseMap();
         }
     }
 }

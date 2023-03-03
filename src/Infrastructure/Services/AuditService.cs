@@ -18,14 +18,14 @@ namespace Inventory.Infrastructure.Services
 {
     public class AuditService : IAuditService
     {
-        private readonly BlazorHeroContext _context;
+        private readonly InventoryContext _context;
         private readonly IMapper _mapper;
         private readonly IExcelService _excelService;
         private readonly IStringLocalizer<AuditService> _localizer;
 
         public AuditService(
             IMapper mapper,
-            BlazorHeroContext context,
+            InventoryContext context,
             IExcelService excelService,
             IStringLocalizer<AuditService> localizer)
         {

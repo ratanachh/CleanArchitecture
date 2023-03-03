@@ -23,7 +23,7 @@ namespace Inventory.Client.Extensions
 {
     public static class WebAssemblyHostBuilderExtensions
     {
-        private const string ClientName = "BlazorHero.API";
+        private const string ClientName = "Inventory.API";
 
         public static WebAssemblyHostBuilder AddRootComponents(this WebAssemblyHostBuilder builder)
         {

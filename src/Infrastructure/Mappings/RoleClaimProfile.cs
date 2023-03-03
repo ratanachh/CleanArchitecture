@@ -9,14 +9,14 @@ namespace Inventory.Infrastructure.Mappings
     {
         public RoleClaimProfile()
         {
-            CreateMap<RoleClaimResponse, BlazorHeroRoleClaim>()
-                .ForMember(nameof(BlazorHeroRoleClaim.ClaimType), opt => opt.MapFrom(c => c.Type))
-                .ForMember(nameof(BlazorHeroRoleClaim.ClaimValue), opt => opt.MapFrom(c => c.Value))
+            CreateMap<RoleClaimResponse, InventoryRoleClaim>()
+                .ForMember(nameof(InventoryRoleClaim.ClaimType), opt => opt.MapFrom(c => c.Type))
+                .ForMember(nameof(InventoryRoleClaim.ClaimValue), opt => opt.MapFrom(c => c.Value))
                 .ReverseMap();
 
-            CreateMap<RoleClaimRequest, BlazorHeroRoleClaim>()
-                .ForMember(nameof(BlazorHeroRoleClaim.ClaimType), opt => opt.MapFrom(c => c.Type))
-                .ForMember(nameof(BlazorHeroRoleClaim.ClaimValue), opt => opt.MapFrom(c => c.Value))
+            CreateMap<RoleClaimRequest, InventoryRoleClaim>()
+                .ForMember(nameof(InventoryRoleClaim.ClaimType), opt => opt.MapFrom(c => c.Type))
+                .ForMember(nameof(InventoryRoleClaim.ClaimValue), opt => opt.MapFrom(c => c.Value))
                 .ReverseMap();
         }
     }

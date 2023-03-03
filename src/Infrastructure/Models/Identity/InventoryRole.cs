@@ -5,23 +5,23 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Inventory.Infrastructure.Models.Identity
 {
-    public class BlazorHeroRole : IdentityRole, IAuditableEntity<string>
+    public class InventoryRole : IdentityRole, IAuditableEntity<string>
     {
         public string Description { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }
         public string LastModifiedBy { get; set; }
         public DateTime? LastModifiedOn { get; set; }
-        public virtual ICollection<BlazorHeroRoleClaim> RoleClaims { get; set; }
+        public virtual ICollection<InventoryRoleClaim> RoleClaims { get; set; }
 
-        public BlazorHeroRole() : base()
+        public InventoryRole() : base()
         {
-            RoleClaims = new HashSet<BlazorHeroRoleClaim>();
+            RoleClaims = new HashSet<InventoryRoleClaim>();
         }
 
-        public BlazorHeroRole(string roleName, string roleDescription = null) : base(roleName)
+        public InventoryRole(string roleName, string roleDescription = null) : base(roleName)
         {
-            RoleClaims = new HashSet<BlazorHeroRoleClaim>();
+            RoleClaims = new HashSet<InventoryRoleClaim>();
             Description = roleDescription;
         }
     }

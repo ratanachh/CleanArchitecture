@@ -86,7 +86,7 @@ namespace Inventory.Server
             app.UseAuthorization();
             app.UseHangfireDashboard("/jobs", new DashboardOptions
             {
-                DashboardTitle = localizer["BlazorHero Jobs"],
+                DashboardTitle = localizer["Inventory Jobs"],
                 Authorization = new[] { new HangfireAuthorizationFilter() }
             });
             app.UseEndpoints();

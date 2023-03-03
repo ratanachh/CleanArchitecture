@@ -176,7 +176,7 @@ namespace Inventory.Server.Extensions
             this IServiceCollection services,
             IConfiguration configuration)
             => services
-                .AddDbContext<BlazorHeroContext>(options => options
+                .AddDbContext<InventoryContext>(options => options
                     .UseSqlServer(configuration.GetConnectionString("DefaultConnection")))
             .AddTransient<IDatabaseSeeder, DatabaseSeeder>();
 
@@ -192,7 +192,7 @@ namespace Inventory.Server.Extensions
             services
                 .AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>()
                 .AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>()
-                .AddIdentity<BlazorHeroUser, BlazorHeroRole>(options =>
+                .AddIdentity<InventoryUser, InventoryRole>(options =>
                 {
                     options.Password.RequiredLength = 6;
                     options.Password.RequireDigit = false;
@@ -201,7 +201,7 @@ namespace Inventory.Server.Extensions
                     options.Password.RequireUppercase = false;
                     options.User.RequireUniqueEmail = true;
                 })
-                .AddEntityFrameworkStores<BlazorHeroContext>()
+                .AddEntityFrameworkStores<InventoryContext>()
                 .AddDefaultTokenProviders();
 
             return services;

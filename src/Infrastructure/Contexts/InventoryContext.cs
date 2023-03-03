@@ -13,19 +13,19 @@ using Inventory.Domain.Entities.Misc;
 
 namespace Inventory.Infrastructure.Contexts
 {
-    public class BlazorHeroContext : AuditableContext
+    public class InventoryContext : AuditableContext
     {
         private readonly ICurrentUserService _currentUserService;
         private readonly IDateTimeService _dateTimeService;
 
-        public BlazorHeroContext(DbContextOptions<BlazorHeroContext> options, ICurrentUserService currentUserService, IDateTimeService dateTimeService)
+        public InventoryContext(DbContextOptions<InventoryContext> options, ICurrentUserService currentUserService, IDateTimeService dateTimeService)
             : base(options)
         {
             _currentUserService = currentUserService;
             _dateTimeService = dateTimeService;
         }
 
-        public DbSet<ChatHistory<BlazorHeroUser>> ChatHistories { get; set; }
+        public DbSet<ChatHistory<InventoryUser>> ChatHistories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Document> Documents { get; set; }
@@ -42,7 +42,6 @@ namespace Inventory.Infrastructure.Contexts
                         entry.Entity.CreatedOn = _dateTimeService.NowUtc;
                         entry.Entity.CreatedBy = _currentUserService.UserId;
                         break;
-
                     case EntityState.Modified:
                         entry.Entity.LastModifiedOn = _dateTimeService.NowUtc;
                         entry.Entity.LastModifiedBy = _currentUserService.UserId;
@@ -53,10 +52,8 @@ namespace Inventory.Infrastructure.Contexts
             {
                 return await base.SaveChangesAsync(cancellationToken);
             }
-            else
-            {
-                return await base.SaveChangesAsync(_currentUserService.UserId, cancellationToken);
-            }
+
+            return await base.SaveChangesAsync(_currentUserService.UserId, cancellationToken);
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -68,7 +65,7 @@ namespace Inventory.Infrastructure.Contexts
                 property.SetColumnType("decimal(18,2)");
             }
             base.OnModelCreating(builder);
-            builder.Entity<ChatHistory<BlazorHeroUser>>(entity =>
+            builder.Entity<ChatHistory<InventoryUser>>(entity =>
             {
                 entity.ToTable("ChatHistory");
 
@@ -82,13 +79,13 @@ namespace Inventory.Infrastructure.Contexts
                     .HasForeignKey(d => d.ToUserId)
                     .OnDelete(DeleteBehavior.ClientSetNull);
             });
-            builder.Entity<BlazorHeroUser>(entity =>
+            builder.Entity<InventoryUser>(entity =>
             {
                 entity.ToTable(name: "Users", "Identity");
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
             });
 
-            builder.Entity<BlazorHeroRole>(entity =>
+            builder.Entity<InventoryRole>(entity =>
             {
                 entity.ToTable(name: "Roles", "Identity");
             });
@@ -107,7 +104,7 @@ namespace Inventory.Infrastructure.Contexts
                 entity.ToTable("UserLogins", "Identity");
             });
 
-            builder.Entity<BlazorHeroRoleClaim>(entity =>
+            builder.Entity<InventoryRoleClaim>(entity =>
             {
                 entity.ToTable(name: "RoleClaims", "Identity");
 

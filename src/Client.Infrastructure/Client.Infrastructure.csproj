@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <RootNamespace>Inventory.Client.Infrastructure</RootNamespace>
     <AssemblyName>Inventory.Client.Infrastructure</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="10.1.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="5.0.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.7" />
-    <PackageReference Include="MudBlazor" Version="5.0.14" />
-    <PackageReference Include="Blazored.LocalStorage" Version="4.1.2" />
-    <PackageReference Include="Toolbelt.Blazor.HttpClientInterceptor" Version="9.2.1" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="7.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.3" />
+    <PackageReference Include="MudBlazor" Version="6.1.9" />
+    <PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
+    <PackageReference Include="Toolbelt.Blazor.HttpClientInterceptor" Version="10.2.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />

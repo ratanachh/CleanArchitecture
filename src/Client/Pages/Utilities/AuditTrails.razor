@@ -24,7 +24,7 @@ else
                     <MudButton DisableElevation IconColor="Color.Secondary" Variant="Variant.Filled" OnClick="ExportToExcelAsync" StartIcon="@Icons.Custom.FileFormats.FileExcel" Color="Color.Surface">@_localizer["Export To Excel"]</MudButton>
                 }
             </div>
-            <MudToolBarSpacer />
+            <MudSpacer />
             @if (_canSearchAuditTrails)
             {
                 <MudTextField @bind-Value="_searchString" Immediate="true" Placeholder="@_localizer["Search for Trails"]" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0 mb-3"></MudTextField>
@@ -72,7 +72,7 @@ else
             </MudTd>
             <MudTd DataLabel="Tax">@context.Type</MudTd>
             <MudTd Style="text-align:right">
-                <MudButton Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Filled.KeyboardArrowDown" IconColor="Color.Secondary" OnClick="@(() => ShowBtnPress(context.Id))">@((context.ShowDetails == true)? _localizer["Hide"] : _localizer["Show"]) @_localizer["Trail Details"]</MudButton>
+                <MudButton Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Material.Filled.KeyboardArrowDown" IconColor="Color.Secondary" OnClick="@(() => ShowBtnPress(context.Id))">@((context.ShowDetails == true)? _localizer["Hide"] : _localizer["Show"]) @_localizer["Trail Details"]</MudButton>
             </MudTd>
         </RowTemplate>
         <ChildRowContent>

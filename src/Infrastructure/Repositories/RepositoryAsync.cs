@@ -10,9 +10,9 @@ namespace Inventory.Infrastructure.Repositories
 {
     public class RepositoryAsync<T, TId> : IRepositoryAsync<T, TId> where T : AuditableEntity<TId>
     {
-        private readonly BlazorHeroContext _dbContext;
+        private readonly InventoryContext _dbContext;
 
-        public RepositoryAsync(BlazorHeroContext dbContext)
+        public RepositoryAsync(InventoryContext dbContext)
         {
             _dbContext = dbContext;
         }

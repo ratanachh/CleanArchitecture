@@ -8,7 +8,7 @@ using Inventory.Application.Models.Chat;
 
 namespace Inventory.Infrastructure.Models.Identity
 {
-    public class BlazorHeroUser : IdentityUser<string>, IChatUser, IAuditableEntity<string>
+    public class InventoryUser : IdentityUser<string>, IChatUser, IAuditableEntity<string>
     {
         public string FirstName { get; set; }
 
@@ -30,13 +30,13 @@ namespace Inventory.Infrastructure.Models.Identity
         public bool IsActive { get; set; }
         public string RefreshToken { get; set; }
         public DateTime RefreshTokenExpiryTime { get; set; }
-        public virtual ICollection<ChatHistory<BlazorHeroUser>> ChatHistoryFromUsers { get; set; }
-        public virtual ICollection<ChatHistory<BlazorHeroUser>> ChatHistoryToUsers { get; set; }
+        public virtual ICollection<ChatHistory<InventoryUser>> ChatHistoryFromUsers { get; set; }
+        public virtual ICollection<ChatHistory<InventoryUser>> ChatHistoryToUsers { get; set; }
 
-        public BlazorHeroUser()
+        public InventoryUser()
         {
-            ChatHistoryFromUsers = new HashSet<ChatHistory<BlazorHeroUser>>();
-            ChatHistoryToUsers = new HashSet<ChatHistory<BlazorHeroUser>>();
+            ChatHistoryFromUsers = new HashSet<ChatHistory<InventoryUser>>();
+            ChatHistoryToUsers = new HashSet<ChatHistory<InventoryUser>>();
         }
     }
 }

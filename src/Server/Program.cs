@@ -22,7 +22,7 @@ namespace Inventory.Server
 
                 try
                 {
-                    var context = services.GetRequiredService<BlazorHeroContext>();
+                    var context = services.GetRequiredService<InventoryContext>();
 
                     if (context.Database.IsSqlServer())
                     {

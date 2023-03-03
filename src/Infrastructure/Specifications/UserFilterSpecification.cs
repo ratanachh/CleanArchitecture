@@ -3,7 +3,7 @@ using Inventory.Application.Specifications.Base;
 
 namespace Inventory.Infrastructure.Specifications
 {
-    public class UserFilterSpecification : HeroSpecification<BlazorHeroUser>
+    public class UserFilterSpecification : Specification<InventoryUser>
     {
         public UserFilterSpecification(string searchString)
         {

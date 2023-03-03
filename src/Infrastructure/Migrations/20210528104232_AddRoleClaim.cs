@@ -3,21 +3,21 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Inventory.Infrastructure.Migrations
 {
-    public partial class AddBlazorHeroRole : Migration
+    public partial class AddRoleClaim : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
                 name: "CreatedBy",
                 schema: "Identity",
-                table: "Roles",
+                table: "RoleClaims",
                 type: "nvarchar(max)",
                 nullable: true);
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "CreatedOn",
                 schema: "Identity",
-                table: "Roles",
+                table: "RoleClaims",
                 type: "datetime2",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
@@ -25,21 +25,28 @@ namespace Inventory.Infrastructure.Migrations
             migrationBuilder.AddColumn<string>(
                 name: "Description",
                 schema: "Identity",
-                table: "Roles",
+                table: "RoleClaims",
+                type: "nvarchar(max)",
+                nullable: true);
+
+            migrationBuilder.AddColumn<string>(
+                name: "Group",
+                schema: "Identity",
+                table: "RoleClaims",
                 type: "nvarchar(max)",
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "LastModifiedBy",
                 schema: "Identity",
-                table: "Roles",
+                table: "RoleClaims",
                 type: "nvarchar(max)",
                 nullable: true);
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "LastModifiedOn",
                 schema: "Identity",
-                table: "Roles",
+                table: "RoleClaims",
                 type: "datetime2",
                 nullable: true);
         }
@@ -49,27 +56,32 @@ namespace Inventory.Infrastructure.Migrations
             migrationBuilder.DropColumn(
                 name: "CreatedBy",
                 schema: "Identity",
-                table: "Roles");
+                table: "RoleClaims");
 
             migrationBuilder.DropColumn(
                 name: "CreatedOn",
                 schema: "Identity",
-                table: "Roles");
+                table: "RoleClaims");
 
             migrationBuilder.DropColumn(
                 name: "Description",
                 schema: "Identity",
-                table: "Roles");
+                table: "RoleClaims");
+
+            migrationBuilder.DropColumn(
+                name: "Group",
+                schema: "Identity",
+                table: "RoleClaims");
 
             migrationBuilder.DropColumn(
                 name: "LastModifiedBy",
                 schema: "Identity",
-                table: "Roles");
+                table: "RoleClaims");
 
             migrationBuilder.DropColumn(
                 name: "LastModifiedOn",
                 schema: "Identity",
-                table: "Roles");
+                table: "RoleClaims");
         }
     }
 }

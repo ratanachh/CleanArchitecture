@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Inventory.Infrastructure.Models.Identity
 {
-    public class BlazorHeroRoleClaim : IdentityRoleClaim<string>, IAuditableEntity<int>
+    public class InventoryRoleClaim : IdentityRoleClaim<string>, IAuditableEntity<int>
     {
         public string Description { get; set; }
         public string Group { get; set; }
@@ -12,13 +12,13 @@ namespace Inventory.Infrastructure.Models.Identity
         public DateTime CreatedOn { get; set; }
         public string LastModifiedBy { get; set; }
         public DateTime? LastModifiedOn { get; set; }
-        public virtual BlazorHeroRole Role { get; set; }
+        public virtual InventoryRole Role { get; set; }
 
-        public BlazorHeroRoleClaim() : base()
+        public InventoryRoleClaim() : base()
         {
         }
 
-        public BlazorHeroRoleClaim(string roleClaimDescription = null, string roleClaimGroup = null) : base()
+        public InventoryRoleClaim(string roleClaimDescription = null, string roleClaimGroup = null) : base()
         {
             Description = roleClaimDescription;
             Group = roleClaimGroup;

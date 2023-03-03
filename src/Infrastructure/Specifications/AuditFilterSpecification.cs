@@ -3,7 +3,7 @@ using Inventory.Application.Specifications.Base;
 
 namespace Inventory.Infrastructure.Specifications
 {
-    public class AuditFilterSpecification : HeroSpecification<Audit>
+    public class AuditFilterSpecification : Specification<Audit>
     {
         public AuditFilterSpecification(string userId, string searchString, bool searchInOldValues, bool searchInNewValues)
         {
