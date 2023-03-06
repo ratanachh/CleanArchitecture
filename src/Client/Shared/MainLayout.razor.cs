@@ -58,17 +58,11 @@ namespace Inventory.Client.Shared
 
         private MudTheme _currentTheme;
         private bool _drawerOpen = true;
-        private bool _rightToLeft = false;
-        private async Task RightToLeftToggle()
-        {
-            var isRtl = await _clientPreferenceManager.ToggleLayoutDirection();
-            _rightToLeft = isRtl;
-            _drawerOpen = false;
-        }
+        private bool _rightToLeft;
 
         protected override async Task OnInitializedAsync()
         {
-            _currentTheme = BlazorHeroTheme.DefaultTheme;
+            _currentTheme = InventoryTheme.DefaultTheme;
             _currentTheme = await _clientPreferenceManager.GetCurrentThemeAsync();
             _rightToLeft = await _clientPreferenceManager.IsRTL();
             _interceptor.RegisterEvent();
@@ -162,8 +156,8 @@ namespace Inventory.Client.Shared
         {
             bool isDarkMode = await _clientPreferenceManager.ToggleDarkModeAsync();
             _currentTheme = isDarkMode
-                ? BlazorHeroTheme.DefaultTheme
-                : BlazorHeroTheme.DarkTheme;
+                ? InventoryTheme.DefaultTheme
+                : InventoryTheme.DarkTheme;
         }
 
         public void Dispose()

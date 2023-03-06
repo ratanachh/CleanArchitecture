@@ -7,7 +7,7 @@
             return $"{DownloadFile}?searchString={searchString}&searchInOldValues={searchInOldValues}&searchInNewValues={searchInNewValues}";
         }
 
-        public static string GetCurrentUserTrails = "api/audits";
-        public static string DownloadFile = "api/audits/export";
+        public const string GetCurrentUserTrails = "api/audits";
+        public const string DownloadFile = "api/audits/export";
     }
 }

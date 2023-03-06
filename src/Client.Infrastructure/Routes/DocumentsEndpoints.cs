@@ -12,7 +12,7 @@
             return $"api/documents/{documentId}";
         }
 
-        public static string Save = "api/documents";
-        public static string Delete = "api/documents";
+        public const string Save = "api/documents";
+        public const string Delete = "api/documents";
     }
 }

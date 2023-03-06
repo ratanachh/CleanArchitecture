@@ -70,21 +70,13 @@ namespace Inventory.Client.Infrastructure.Managers.Preferences
 
         public async Task<MudTheme> GetCurrentThemeAsync()
         {
-            var preference = await GetPreference() as ClientPreference;
-            if (preference != null)
-            {
-                if (preference.IsDarkMode == true) return BlazorHeroTheme.DarkTheme;
-            }
-            return BlazorHeroTheme.DefaultTheme;
+            if (await GetPreference() is not ClientPreference preference) return InventoryTheme.DefaultTheme;
+            return preference.IsDarkMode ? InventoryTheme.DarkTheme : InventoryTheme.DefaultTheme;
         }
         public async Task<bool> IsRTL()
         {
             var preference = await GetPreference() as ClientPreference;
-            if (preference != null)
-            {
-                if (preference.IsDarkMode == true) return false;
-            }
-            return preference.IsRTL;
+            return preference is {IsDarkMode: false, IsRTL: true};
         }
 
         public async Task<IPreference> GetPreference()

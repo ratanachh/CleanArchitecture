@@ -304,7 +304,7 @@ namespace Inventory.Server.Extensions
                     var propertyValue = prop.GetValue(null);
                     if (propertyValue is not null)
                     {
-                        options.AddPolicy(propertyValue.ToString(), policy => policy.RequireClaim(ApplicationClaimTypes.Permission, propertyValue.ToString()));
+                        options.AddPolicy(propertyValue.ToString()!, policy => policy.RequireClaim(ApplicationClaimTypes.Permission, propertyValue.ToString()));
                     }
                 }
             });

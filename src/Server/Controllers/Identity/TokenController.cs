@@ -1,5 +1,4 @@
-﻿using Inventory.Application.Interfaces.Services;
-using Inventory.Application.Interfaces.Services.Identity;
+﻿using Inventory.Application.Interfaces.Services.Identity;
 using Inventory.Application.Requests.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -12,7 +11,7 @@ namespace Inventory.Server.Controllers.Identity
     {
         private readonly ITokenService _identityService;
 
-        public TokenController(ITokenService identityService, ICurrentUserService currentUserService)
+        public TokenController(ITokenService identityService)
         {
             _identityService = identityService;
         }

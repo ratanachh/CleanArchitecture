@@ -7,11 +7,11 @@
             return $"{Export}?searchString={searchString}";
         }
 
-        public static string Export = "api/v1/brands/export";
+        public const string Export = "api/v1/brands/export";
 
-        public static string GetAll = "api/v1/brands";
-        public static string Delete = "api/v1/brands";
-        public static string Save = "api/v1/brands";
-        public static string GetCount = "api/v1/brands/count";
+        public const string GetAll = "api/v1/brands";
+        public const string Delete = "api/v1/brands";
+        public const string Save = "api/v1/brands";
+        public const string GetCount = "api/v1/brands/count";
     }
 }

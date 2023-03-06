@@ -2,6 +2,6 @@
 {
     public class DashboardEndpoints
     {
-        public static string GetData = "api/v1/dashboard";
+        public const string GetData = "api/v1/dashboard";
     }
 }

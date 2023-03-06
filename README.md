@@ -68,10 +68,6 @@ The easiest way to get started with Inventory project is to install the [NuGet p
 
 Getting started with this Template – A Clean Architecture Template built for Blazor WebAssembly using MudBlazor Components. This project will make your Blazor Learning Process much easier than you anticipate. Blazor Hero is meant to be an Enterprise Level Boilerplate, which comes free of cost, completely open sourced. 
 
-The provided documentation / guide will get you started with BlazorHero in no-time. It provides a complete walkthrough about the project with to-the-point guides and notes.
-
-<a href="https://codewithmukesh.com/blog/blazor-hero-quick-start-guide/"><strong>Read the Quick Start Guide</strong></a>
-
 # Features
 
 All the completed and the upcoming features are mentioned in the [Features.MD File](https://github.com/ratanachh/CleanArchitecture/blob/master/Features.md)

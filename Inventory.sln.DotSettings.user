@@ -3,4 +3,16 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FInfrastructure_002FInfrastructure_002FResources_002FServices_002FChatService/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FInfrastructure_002FInfrastructure_002FResources_002FServices_002FExcelService/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FInfrastructure_002FInfrastructure_002FResources_002FServices_002FIdentity_002FAccountService/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FClient_002FClient_002EInfrastructure_002FResources_002FManagers_002FIdentity_002FAuthentication_002FAuthenticationManager/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FClient_002FClient_002EInfrastructure_002FResources_002FManagers_002FInterceptors_002FHttpInterceptorManager/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FClient_002FClient_002EInfrastructure_002FResources_002FManagers_002FPreferences_002FClientPreferenceManager/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FClient_002FClient_002FResources_002FPages_002FContent_002FDashboard/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FClient_002FClient_002FResources_002FPages_002FContent_002FHome/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FClient_002FClient_002FResources_002FShared_002FComponents_002FTablePager/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FClient_002FClient_002FResources_002FShared_002FMainLayout/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FClient_002FClient_002FResources_002FShared_002FNavMenu/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FClient_002FClient_002FResources_002FShared_002FNotFoundLayout/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FServer_002FServer_002FResources_002FLocalization_002FServerCommonResources/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FServer_002FServer_002FResources_002FManagers_002FPreferences_002FServerPreferenceManager/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Source_002FWeb_002FServer_002FServer_002FResources_002FStartup/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>

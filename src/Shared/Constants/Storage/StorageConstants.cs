@@ -4,16 +4,15 @@
     {
         public static class Local
         {
-            public static string Preference = "clientPreference";
-
-            public static string AuthToken = "authToken";
-            public static string RefreshToken = "refreshToken";
-            public static string UserImageURL = "userImageURL";
+            public const string Preference = "clientPreference";
+            public const string AuthToken = "authToken";
+            public const string RefreshToken = "refreshToken";
+            public const string UserImageURL = "userImageURL";
         }
 
         public static class Server
         {
-            public static string Preference = "serverPreference";
+            public const string Preference = "serverPreference";
 
             //TODO - add
         }

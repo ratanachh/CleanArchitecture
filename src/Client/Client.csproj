@@ -7,9 +7,6 @@
     <AssemblyName>Inventory.Client</AssemblyName>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Content Remove="Shared\Components\BlazorHeroLogo.razor" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Blazored.FluentValidation" Version="2.1.0" />
@@ -25,18 +22,6 @@
     <PackageReference Include="System.Net.Http.Json" Version="7.0.0" />
     <PackageReference Include="MudBlazor" Version="6.1.9" />
     <PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Shared\Components\BlazorHeroLogo.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Shared\Components\BlazorHeroLogo.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Shared\Components\BlazorHeroLogo.razor" />
   </ItemGroup>
 
   <ItemGroup>

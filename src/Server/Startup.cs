@@ -91,7 +91,7 @@ namespace Inventory.Server
             });
             app.UseEndpoints();
             app.ConfigureSwagger();
-            app.Initialize(_configuration);
+            app.Initialize();
         }
     }
 }
