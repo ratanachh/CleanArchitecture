@@ -13,8 +13,7 @@ services:
     volumes:
       - ~/.aspnet/https:/https:ro
     ports:
-      - "5005:5005"
-      - "5006:5006"
+      - "5005:80"
     depends_on:
       - db
     restart: on-failure
