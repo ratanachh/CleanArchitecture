@@ -13,12 +13,12 @@ using Inventory.Shared.Constants.Storage;
 
 namespace Inventory.Client.Infrastructure.Authentication
 {
-    public class BlazorHeroStateProvider : AuthenticationStateProvider
+    public class InventoryStateProvider : AuthenticationStateProvider
     {
         private readonly HttpClient _httpClient;
         private readonly ILocalStorageService _localStorage;
 
-        public BlazorHeroStateProvider(
+        public InventoryStateProvider(
             HttpClient httpClient,
             ILocalStorageService localStorage)
         {

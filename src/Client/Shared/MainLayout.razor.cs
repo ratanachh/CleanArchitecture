@@ -58,13 +58,11 @@ namespace Inventory.Client.Shared
 
         private MudTheme _currentTheme;
         private bool _drawerOpen = true;
-        private bool _rightToLeft;
 
         protected override async Task OnInitializedAsync()
         {
             _currentTheme = InventoryTheme.DefaultTheme;
             _currentTheme = await _clientPreferenceManager.GetCurrentThemeAsync();
-            _rightToLeft = await _clientPreferenceManager.IsRTL();
             _interceptor.RegisterEvent();
             hubConnection = hubConnection.TryInitialize(_navigationManager);
             await hubConnection.StartAsync();
@@ -163,7 +161,6 @@ namespace Inventory.Client.Shared
         public void Dispose()
         {
             _interceptor.DisposeEvent();
-            //_ = hubConnection.DisposeAsync();
         }
 
         private HubConnection hubConnection;
