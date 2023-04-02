@@ -64,6 +64,12 @@ The easiest way to get started with Inventory project is to install the [NuGet p
 - That's almost everything. Once the containers are available, migrations are updated in the MSSQL DB, default data is seeded.
 - Browse to https://localhost:5005/
 
+## Getting Started with Postgres:
+- `dotnet ef migrations add "InitMigration" --project src\Infrastructure --startup-project src\Server --output-dir Migrations`
+- `dotnet ef database update --project src\Infrastructure --startup-project src\Server`
+- `dotnet ef migrations remove --project src\Infrastructure --startup-project src\Server`
+- `dotnet ef database drop --project src\Infrastructure --startup-project src\Server`
+
 # Complete Documentation :rocket:
 
 Getting started with this Template – A Clean Architecture Template built for Blazor WebAssembly using MudBlazor Components. This project will make your Blazor Learning Process much easier than you anticipate. Blazor Hero is meant to be an Enterprise Level Boilerplate, which comes free of cost, completely open sourced. 

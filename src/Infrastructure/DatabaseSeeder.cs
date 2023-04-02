@@ -60,10 +60,10 @@ namespace Inventory.Infrastructure
                 //Check if User Exists
                 var superUser = new InventoryUser
                 {
-                    FirstName = "Mukesh",
-                    LastName = "Murugan",
-                    Email = "mukesh@blazorhero.com",
-                    UserName = "mukesh",
+                    FirstName = "Ratana",
+                    LastName = "Chhorm",
+                    Email = "me@ratana.tech",
+                    UserName = "ratana",
                     EmailConfirmed = true,
                     PhoneNumberConfirmed = true,
                     CreatedOn = DateTime.Now,
@@ -108,10 +108,10 @@ namespace Inventory.Infrastructure
                 //Check if User Exists
                 var basicUser = new InventoryUser
                 {
-                    FirstName = "John",
-                    LastName = "Doe",
-                    Email = "john@blazorhero.com",
-                    UserName = "johndoe",
+                    FirstName = "User",
+                    LastName = "Test",
+                    Email = "user@ratana.tech",
+                    UserName = "user_1",
                     EmailConfirmed = true,
                     PhoneNumberConfirmed = true,
                     CreatedOn = DateTime.Now,

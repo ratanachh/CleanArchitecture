@@ -61,13 +61,13 @@ namespace Inventory.Client.Pages.Authentication
 
         private void FillAdministratorCredentials()
         {
-            _tokenModel.Email = "mukesh@blazorhero.com";
+            _tokenModel.Email = "me@ratana.tech";
             _tokenModel.Password = "123Pa$$word!";
         }
 
         private void FillBasicUserCredentials()
         {
-            _tokenModel.Email = "john@blazorhero.com";
+            _tokenModel.Email = "user@ratana.tech";
             _tokenModel.Password = "123Pa$$word!";
         }
     }

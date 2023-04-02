@@ -1,4 +1,5 @@
-﻿using Inventory.Application.Interfaces.Services;
+﻿using System;
+using Inventory.Application.Interfaces.Services;
 using Inventory.Application.Models.Chat;
 using Inventory.Infrastructure.Models.Identity;
 using Inventory.Domain.Contracts;
@@ -23,6 +24,8 @@ namespace Inventory.Infrastructure.Contexts
         {
             _currentUserService = currentUserService;
             _dateTimeService = dateTimeService;
+            // https://www.npgsql.org/efcore/release-notes/6.0.html?tabs=annotations#opting-out-of-the-new-timestamp-mapping-logic
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         public DbSet<ChatHistory<InventoryUser>> ChatHistories { get; set; }

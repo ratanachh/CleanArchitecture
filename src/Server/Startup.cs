@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using Hangfire.PostgreSql;
 using Inventory.Server.Filters;
 using Inventory.Server.Managers.Preferences;
 using Microsoft.Extensions.Localization;
@@ -52,7 +53,7 @@ namespace Inventory.Server
             services.AddSharedInfrastructure(_configuration);
             services.RegisterSwagger();
             services.AddInfrastructureMappings();
-            services.AddHangfire(x => x.UseSqlServerStorage(_configuration.GetConnectionString("DefaultConnection")));
+            services.AddHangfire(x => x.UsePostgreSqlStorage(_configuration.GetConnectionString("DefaultConnection")));
             services.AddHangfireServer();
             services.AddControllers().AddValidators();
             services.AddExtendedAttributesValidators();

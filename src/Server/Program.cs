@@ -24,7 +24,7 @@ namespace Inventory.Server
                 {
                     var context = services.GetRequiredService<InventoryContext>();
 
-                    if (context.Database.IsSqlServer())
+                    if (context.Database.IsNpgsql())
                     {
                         await context.Database.MigrateAsync();
                     }

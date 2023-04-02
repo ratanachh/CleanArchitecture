@@ -15,7 +15,7 @@ namespace Inventory.Infrastructure.Repositories
     {
         private readonly ICurrentUserService _currentUserService;
         private readonly InventoryContext _dbContext;
-        private bool disposed;
+        private bool _disposed;
         private Hashtable _repositories;
         private readonly IAppCache _cache;
 
@@ -28,19 +28,17 @@ namespace Inventory.Infrastructure.Repositories
 
         public IRepositoryAsync<TEntity, TId> Repository<TEntity>() where TEntity : AuditableEntity<TId>
         {
-            if (_repositories == null)
-                _repositories = new Hashtable();
+            _repositories ??= new Hashtable();
 
             var type = typeof(TEntity).Name;
 
-            if (!_repositories.ContainsKey(type))
-            {
-                var repositoryType = typeof(RepositoryAsync<,>);
+            if (_repositories.ContainsKey(type)) return (IRepositoryAsync<TEntity, TId>) _repositories[type];
 
-                var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity), typeof(TId)), _dbContext);
+            var repositoryType = typeof(RepositoryAsync<,>);
 
-                _repositories.Add(type, repositoryInstance);
-            }
+            var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity), typeof(TId)), _dbContext);
+
+            _repositories.Add(type, repositoryInstance);
 
             return (IRepositoryAsync<TEntity, TId>)_repositories[type];
         }
@@ -74,7 +72,7 @@ namespace Inventory.Infrastructure.Repositories
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposed)
+            if (!_disposed)
             {
                 if (disposing)
                 {
@@ -83,7 +81,7 @@ namespace Inventory.Infrastructure.Repositories
                 }
             }
             //dispose unmanaged resources
-            disposed = true;
+            _disposed = true;
         }
     }
 }

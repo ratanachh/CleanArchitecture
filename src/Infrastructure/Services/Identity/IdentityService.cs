@@ -6,7 +6,6 @@ using Inventory.Application.Responses.Identity;
 using Inventory.Shared.Wrapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -16,6 +15,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Localization;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Inventory.Infrastructure.Services.Identity
 {
